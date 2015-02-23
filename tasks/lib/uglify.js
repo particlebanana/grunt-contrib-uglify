@@ -118,8 +118,9 @@ exports.init = function(grunt) {
 
     // Add the source map reference to the end of the file
     if (options.sourceMap) {
+      var mapURL = options.sourceMappingURL || '';
       // Set all paths to forward slashes for use in the browser
-      min += "\n//# sourceMappingURL=" + uriPath(options.destToSourceMap);
+      min += "\n//# sourceMappingURL=" + mapURL + uriPath(options.destToSourceMap);
     }
 
     var result = {
